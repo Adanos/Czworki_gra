@@ -1,6 +1,6 @@
-Czwórki
+ï»¿CzwÃ³rki
 
-Program umo¿liwia granie w grê planszow¹ "Czwórki". Plansza jest podzielona na pola, rozmiar planszy 7 x 6. Wygrywa osoba, która jako pierwsza u³o¿y 4 ¿etony 
+Program umoÅ¼liwia granie w grÄ™ planszowÄ… "CzwÃ³rki". Plansza jest podzielona na pola, rozmiar planszy 7 x 6. Wygrywa osoba, ktÃ³ra jako pierwsza uÅ‚oÅ¼y 4 Å¼etony 
 w pionie, poziomie lub w skosie.
 
 Dane techniczne: Java, JUNIT, MVC.
