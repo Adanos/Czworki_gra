@@ -4,20 +4,25 @@ import java.awt.Color;
 
 public class TokenCoin
 {
-	private int diameter;
 	private int value;
 	private int x;
 	private int y;
 	private Color color;
 	
-	public int getDiameter()
+	private final int INIT_VALUE = 0;
+	private static final int DIAMETER = 50;
+	
+	public TokenCoin(int x, int y, Color color)
 	{
-		return diameter;
+		setX(x);
+		setY(y);
+		setColor(color);
+		setValue(INIT_VALUE);
 	}
 	
-	private void setDiameter(int diameter)
+	public int getDiameter()
 	{
-		this.diameter = diameter;
+		return DIAMETER;
 	}
 
 	public int getValue()
