@@ -20,4 +20,12 @@ public class Board
 	{
 		return columnNumber;
 	}
+	
+	@Override
+	public String toString()
+	{
+		String result = "Plansza o wymiarach " + getRowNumber() + " na " + getColumnNumber() + ".";
+
+		return result;
+	}
 }

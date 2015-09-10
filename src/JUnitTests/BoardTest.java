@@ -70,4 +70,14 @@ public class BoardTest
       field.setAccessible(true);
       assertEquals("Fields didn't match ", field.get(board), rowNumber);
 	}
+	
+	@Test
+	public void testToString()
+	{
+		String result = "";
+		String text = "Plansza o wymiarach 5 na 7.";
+		Board board = new Board(5, 7);
+		result = board.toString();
+		assertEquals("Texts are not equals ", text, result);
+	}
 }
