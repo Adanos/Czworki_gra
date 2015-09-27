@@ -4,14 +4,13 @@ import java.awt.Color;
 
 public class TokenCoin
 {
+	private final int INIT_VALUE = 0;
+	private static final int DIAMETER = 50;
 	private volatile int hashCode;
 	private int value;
 	private int x;
 	private int y;
 	private Color color;
-	
-	private final int INIT_VALUE = 0;
-	private static final int DIAMETER = 50;
 	
 	public TokenCoin(int x, int y, Color color)
 	{
@@ -21,7 +20,7 @@ public class TokenCoin
 		setValue(INIT_VALUE);
 	}
 	
-	public int getDiameter()
+	public static int getDiameter()
 	{
 		return DIAMETER;
 	}
@@ -102,9 +101,14 @@ public class TokenCoin
 	@Override
 	public String toString()
 	{
-		String result = "Żeton o wartości " + getValue() + " o współrzędnych [" + getX() + ", " 
-							+ getY() + "].";
+		StringBuilder stringBuilder = new StringBuilder("Żeton o wartości ");
+		stringBuilder.append(getValue());
+		stringBuilder.append(" o współrzędnych [");
+		stringBuilder.append(getX());
+		stringBuilder.append( ", ");
+		stringBuilder.append(getY());
+		stringBuilder.append("].");
 		
-		return result;
+		return stringBuilder.toString();
 	}
 }
