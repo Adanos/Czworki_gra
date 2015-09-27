@@ -16,24 +16,24 @@ public class GameWindow extends JFrame
 	public GameWindow()
 	{
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
-      setLocation(0, 0);
-      setResizable(true);
-      setTitle("Czwórki");
-      setUndecorated(false);
-      setVisible(true);
-      setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setLocation(0, 0);
+		setResizable(true);
+		setTitle("Czwórki");
+		setUndecorated(false);
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
       
-      addWindowListener(new WindowAdapter()
-      {
-      	public void windowClosing(WindowEvent we)
-         {
-      		if(JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.OK_OPTION)
-      		{
-               setVisible(false);
-               System.exit(0);
-      		}
-         }
-      });
-      //Container contentPane = getContentPane();
+		addWindowListener(new WindowAdapter()
+		{
+			public void windowClosing(WindowEvent we)
+			{
+				if(JOptionPane.showConfirmDialog(null, "Are you sure?") == JOptionPane.OK_OPTION)
+				{
+					setVisible(false);
+					System.exit(0);
+				}
+			}
+		});
+		//Container contentPane = getContentPane();
 	}
 }
