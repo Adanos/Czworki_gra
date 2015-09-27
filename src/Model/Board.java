@@ -24,8 +24,12 @@ public class Board
 	@Override
 	public String toString()
 	{
-		String result = "Plansza o wymiarach " + getRowNumber() + " na " + getColumnNumber() + ".";
-
-		return result;
+		StringBuilder stringBuilder = new StringBuilder("Plansza o wymiarach ");
+		stringBuilder.append(getRowNumber());
+		stringBuilder.append(" na ");
+		stringBuilder.append(getColumnNumber());
+		stringBuilder.append(".");
+		
+		return stringBuilder.toString();
 	}
 }
