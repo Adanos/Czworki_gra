@@ -128,17 +128,28 @@ public class TokenCoinTest
 	}
 	
 	@Test
-	public void testEqualsIdentity()
+	public void equals_indentity_returnsTrue()
 	{
 		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
 		
 		boolean result = tokenCoin.equals(tokenCoin);
 		
-		assertEquals("No identity in method equals ", result, true);
+		assertEquals("No identity in method equals,", result, true);
 	}
 	
 	@Test
-	public void testEqualsSymmetry()
+	public void equals_indentity_returnsFalse()
+	{
+		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
+		TokenCoin tokenCoin2 = new TokenCoin(2, 4, Color.red);
+		
+		boolean result = tokenCoin.equals(tokenCoin2);
+		
+		assertEquals("The objects are identity in method equals,", result, false);
+	}
+	
+	@Test
+	public void equals_symmetry_returnsSameValue()
 	{
 		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
 		TokenCoin tokenCoin2 = new TokenCoin(4, 3, Color.red);
@@ -150,7 +161,7 @@ public class TokenCoinTest
 	}
 	
 	@Test
-	public void testEqualsTransitivity()
+	public void equals_transitivity_returnsTrue()
 	{
 		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
 		TokenCoin tokenCoin2 = new TokenCoin(2, 3, Color.red);
@@ -166,7 +177,7 @@ public class TokenCoinTest
 	}
 	
 	@Test 
-	public void testEqualsConsistency()
+	public void equals_consistency_returnsTrue()
 	{
 		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
 		TokenCoin tokenCoin2 = new TokenCoin(2, 3, Color.red);
@@ -174,19 +185,32 @@ public class TokenCoinTest
 		boolean result = tokenCoin.equals(tokenCoin2);
 		boolean result2 = tokenCoin.equals(tokenCoin2);
 		boolean result3 = tokenCoin.equals(tokenCoin2);
-		tokenCoin2 = new TokenCoin(2, 3, Color.green);
-		boolean result4 = tokenCoin.equals(tokenCoin2);
-		boolean result5 = tokenCoin.equals(tokenCoin2);
 		
 		assertEquals("No consistency in method equals ", result, true);
 		assertEquals("No consistency in method equals ", result2, true);
 		assertEquals("No consistency in method equals ", result3, true);
+	}
+	
+	@Test 
+	public void equals_consistency_returnsFalse()
+	{
+		TokenCoin tokenCoin = new TokenCoin(2, 3, Color.red);
+		TokenCoin tokenCoin2 = new TokenCoin(2, 3, Color.red);
+		
+		tokenCoin.equals(tokenCoin2);
+		tokenCoin.equals(tokenCoin2);
+		tokenCoin.equals(tokenCoin2);
+		
+		tokenCoin2 = new TokenCoin(2, 3, Color.green);
+		boolean result4 = tokenCoin.equals(tokenCoin2);
+		boolean result5 = tokenCoin.equals(tokenCoin2);
+		
 		assertEquals("No consistency in method equals ", result4, false);
 		assertEquals("No consistency in method equals ", result5, false);
 	}
 	
 	@Test
-	public void testEqualsNonNullity()
+	public void equals_nonNullity_ReturnsFalse()
 	{
 		TokenCoin tokenCoin = new TokenCoin(1, 3, Color.red);
 		boolean result = tokenCoin.equals(null);
@@ -195,16 +219,24 @@ public class TokenCoinTest
 	}
 	
 	@Test
-	public void testHashCode()
+	public void hashCode_computeValueForSameObjects_returnsSameValue()
 	{
 		TokenCoin tokenCoin = new TokenCoin(1, 3, Color.red);
 		TokenCoin tokenCoin2 = new TokenCoin(1, 3, Color.red);
-		TokenCoin tokenCoin3 = new TokenCoin(1, 3, Color.blue);
 		int result = tokenCoin.hashCode();
 		int result2 = tokenCoin2.hashCode();
-		int result3 = tokenCoin3.hashCode();
 		
 		assertEquals("Hashcode is different for equal objects ", result, result2);
-		assertNotEquals("Hashcode is equal for different objects ", result, result3);
+	}
+	
+	@Test
+	public void hashCode_computeValueForNonSameObjects_returnsNonSameValue()
+	{
+		TokenCoin tokenCoin = new TokenCoin(1, 3, Color.red);
+		TokenCoin tokenCoin2 = new TokenCoin(1, 3, Color.blue);
+		int result = tokenCoin.hashCode();
+		int result2 = tokenCoin2.hashCode();
+		
+		assertNotEquals("Hashcode is equal for different objects ", result, result2);
 	}
 }
