@@ -2,6 +2,8 @@ package Model;
 
 public class Board
 {
+	private final int SIZE_FIELD = 75;
+
 	private int rowNumber;
 	private int columnNumber;
 	
@@ -19,6 +21,11 @@ public class Board
 	public int getColumnNumber()
 	{
 		return columnNumber;
+	}
+	
+	public int getSizeField()
+	{
+		return SIZE_FIELD;
 	}
 	
 	@Override

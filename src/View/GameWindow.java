@@ -1,7 +1,9 @@
 package View;
 
+import java.awt.Container;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+
 
 //import java.awt.Container;
 import javax.swing.JFrame;
@@ -12,8 +14,9 @@ public class GameWindow extends JFrame
 	private static final long serialVersionUID = 3314871466872557666L;
 	private static final int FRAME_WIDTH = 800; 
 	private static final int FRAME_HEIGHT = 600;
+	private BoardView boardView;
 	
-	public GameWindow()
+	public GameWindow(BoardView boardView)
 	{
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		setLocation(0, 0);
@@ -34,6 +37,8 @@ public class GameWindow extends JFrame
 				}
 			}
 		});
-		//Container contentPane = getContentPane();
+		this.boardView = boardView;
+		Container contentPane = getContentPane();
+		contentPane.add(boardView);
 	}
 }
